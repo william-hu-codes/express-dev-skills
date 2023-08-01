@@ -1,3 +1,7 @@
+module.exports = {
+    getAll
+}
+
 const skills = {
     JavaScript: {
         id: 1,
@@ -20,3 +24,8 @@ const skills = {
         learned: false
     }
 }
+
+function getAll() {
+    return skills
+}
+

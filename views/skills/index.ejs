@@ -8,13 +8,13 @@
 <body>
     <h1>Skills</h1>
     <ul>
-      <% skills.forEach(function(skill) { %>
+      <% for (key in skills) { %>
         <li>
-          <%= skill.skill %>
+          <%= skills[key] %>
             - 
-          <%= skill.learned ? 'already learned' : 'will learn soon' %>
+          <%= skills[key].learned ? 'already learned' : 'will learn soon' %>
         </li>
-      <% }); %>
+      <% }; %>
     </ul>
   </body>
 </html>
