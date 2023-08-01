@@ -1,5 +1,6 @@
 module.exports = {
     getAll
+    getOne
 }
 
 const skills = {
@@ -29,3 +30,9 @@ function getAll() {
     return skills
 }
 
+function getOne(id) {
+    id = number(id)
+    for (key in skills) {
+        if (skills[key].id === id) return (key + skills[key])
+    }
+}

@@ -10,9 +10,10 @@
     <ul>
       <% for (key in skills) { %>
         <li>
-          <%= key %>
-            - 
-          <%= skills[key].learned ? 'already learned' : 'will learn soon' %>
+             <a href="/skills/<%= skills[key].id %>"> <%= key %>
+                - 
+                 <%= skills[key].learned ? 'check' : 'coming soon' %>
+             </a>
         </li>
       <% }; %>
     </ul>
