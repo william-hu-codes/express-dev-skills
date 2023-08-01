@@ -8,14 +8,15 @@
 <body>
     <h1>Skills</h1>
     <ul>
-      <% for (key in skills) { %>
+      <% skills.forEach(function(skill) { %>
         <li>
-             <a href="/skills/<%= skills[key].id %>"> <%= key %>
-                - 
-                 <%= skills[key].learned ? 'check' : 'coming soon' %>
-             </a>
+            <a href="/skills/<%= skill.id %>">
+                <%= skill.skill %>
+                 - 
+                <%= skill.learned ? 'check' : 'coming soon' %>
+            </a>
         </li>
-      <% }; %>
+      <% }); %>
     </ul>
   </body>
 </html>
