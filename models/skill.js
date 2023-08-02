@@ -1,6 +1,7 @@
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    create
 }
 
 // const skills = {
@@ -27,11 +28,11 @@ module.exports = {
 // }
 
 const skills = [
-    {skill: "JavaScript", id: 1, learned: true},
-    {skill: "HTML", id: 2, learned: true},
-    {skill: "CSS", id: 3, learned: true},
-    {skill: "Python", id: 4, learned: false},
-    {skill: "Mongoose", id: 5, learned: false}
+    {skill: "JavaScript", id: 128193, learned: true},
+    {skill: "HTML", id: 182372, learned: true},
+    {skill: "CSS", id: 123948, learned: true},
+    {skill: "Python", id: 108217, learned: false},
+    {skill: "Mongoose", id: 102847, learned: false}
 ]
 
 function getAll() {
@@ -41,4 +42,10 @@ function getAll() {
 function getOne(id) {
     id = parseInt(id)
     return skills.find(skill=> skill.id === id)
+}
+function create(data) {
+    const newSkill = {...data}
+    newSkill.learned = data.learned ? true : false
+    newSkill.id = Date.now() % 1000000
+    skills.push(newSkill)
 }
