@@ -1,7 +1,7 @@
 module.exports = {
     getAll,
     getOne,
-    create
+    create,
     deleteOne
 }
 
