@@ -6,7 +6,20 @@
 <body>
     <h3><%= skill.skill %></h3>
     <h3>Learned: <%= skill.learned ? 'Yes' : 'No' %></h3>
+    <form action="/skills/<%= skill.id %>?_method=PUT" method="POST" autocomplete="off">
+        <br/>
+        <label>
+            <input type="checkbox" name="learned" <%= skill.learned ? "checked" : "" %>>
+            Learned
+        </label>
+        <button type="submit">Update status</button>
+    </form>
+
     <a href="/skills/<%= skill.id %>/edit">Edit Skill</a>
+    <br/>
+    <form action="/skills/ <%= skill.id %>?_method=DELETE" class="delete-form" method="POST">
+        <button type="submit">Delete skill</button>
+    </form>
 
     <a href="/skills"><p>Return</p></a>
 
