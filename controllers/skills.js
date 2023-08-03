@@ -7,7 +7,8 @@ module.exports = {
     new: newTodo,
     create,
     delete: deleteSkill,
-    edit
+    edit,
+    update
 }
 
 function index(req, res) {
@@ -44,4 +45,9 @@ function edit(req, res) {
         title: "Edit Skill",
         skill: Skill.getOne(req.params.id)
     })
+}
+
+function update(req, res) {
+    Skill.update(req.params.id, req.body)
+    res.redirect(`/skills/${req.params.id}`)
 }
