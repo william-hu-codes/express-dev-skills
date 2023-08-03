@@ -1,13 +1,8 @@
 <%- include("../partials/header") %>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Skills</title>
-</head>
-<body>
-    <h3><%= skill.skill %></h3>
+    <h1><%= title %> <%= skill.skill %></h1>
+    <!-- <h3><%= skill.skill %></h3> -->
     <h3>Learned: <%= skill.learned ? 'Yes' : 'No' %></h3>
     <form action="/skills/<%= skill.id %>?_method=PUT" method="POST" autocomplete="off">
-        <br/>
         <label>
             <input type="checkbox" name="learned" <%= skill.learned ? "checked" : "" %>>
             Learned
